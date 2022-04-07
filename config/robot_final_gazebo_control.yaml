@@ -1,0 +1,28 @@
+# namespace should to coincide in all files of the package
+# Identation is VERY important in .yaml files
+msv_3dof_arm:
+ # Publish all joint states -----------------------------------
+ joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 2
+ # Position Controllers ---------------------------------------
+ joint_base_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint_base
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+ joint_shoulder_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint_shoulder
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+ joint_elbow_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint_elbow
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+ joint_finger1_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint_finger1
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+ joint_finger2_position_controller:
+  type: position_controllers/JointPositionController
+  joint: joint_finger2
+  pid: {p: 100.0, i: 0.01, d: 10.0}

@@ -1,0 +1,25 @@
+<launch>
+
+<!-- Launch Gazebo -->
+<include file="$(find msv_3dof_arm)/launch/controllers_load.launch" /> 
+
+ <!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="joy_arm" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.12" />
+  </node>
+
+ <!-- Axes -->
+  <param name="mov_X" value="0" type="int"/>
+  <param name="mov_Y" value="3" type="int"/>
+  <param name="mov_Z" value="1" type="int"/>
+  <param name="open_gr" value="4" type="int"/>
+  <param name="close_gr" value="5" type="int"/>
+  <param name="gr_0_sum" value="6" type="int"/>
+  <param name="gr_0_res" value="7" type="int"/>
+  <param name="strt_" value="9" type="int"/>
+  <param name="slp_" value="8" type="int"/>
+
+  <node pkg="msv_3dof_arm" type="teleop_node" name="teleop_thesis"/> 
+</launch>

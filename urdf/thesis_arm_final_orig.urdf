@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="msv_3dof_arm">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 -0.09135"
+        rpy="0 0 0" />
+      <mass
+        value="0.156772566611769" />
+      <inertia
+        ixx="0.000494148301397321"
+        ixy="-2.6240374845148E-21"
+        ixz="-7.90564084104019E-21"
+        iyy="0.000368498301397322"
+        iyz="-2.92371927043028E-20"
+        izz="0.000646691913743825" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5757 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5757 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.110728673410591 -0.0092714182188576 -0.0425649356498366"
+        rpy="1.5757 0 0" />
+      <mass
+        value="0.433898677133809" />
+      <inertia
+        ixx="0.0016639828460917"
+        ixy="0.00120863202140725"
+        ixz="-0.00204502780751148"
+        iyy="0.0125493047119251"
+        iyz="0.000171227036330293"
+        izz="0.0124511366596275" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5757 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5757 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_base"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0.184976916380391 5.73149567945075E-08 -1.87434286751525E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.114971943053287" />
+      <inertia
+        ixx="6.92181720797658E-05"
+        ixy="6.99722840783902E-10"
+        ixz="1.68954468947633E-09"
+        iyy="0.00172567923104233"
+        iyz="4.70686983653976E-09"
+        izz="0.0017235177638611" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_shoulder"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="-0.249271326589409 -0.0425649356498366 0.00927141821885761"
+        rpy="0 0 0" />
+      <mass
+        value="0.433898677133809" />
+      <inertia
+        ixx="0.0016639828460917"
+        ixy="-0.00204502780751148"
+        ixz="-0.00120863202140725"
+        iyy="0.0124511366596275"
+        iyz="-0.000171227036330293"
+        izz="0.0125493047119251" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-0.36 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_elbow"
+    type="revolute">
+    <origin
+      xyz="0.36 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="finger1">
+    <inertial>
+      <origin
+        xyz="-0.370997344849409 0.0161756785111424 -0.0425649356498366"
+        rpy="0 0 0" />
+      <mass
+        value="0.433898677133809" />
+      <inertia
+        ixx="0.0016639828460917"
+        ixy="0.00120863202140725"
+        ixz="-0.00204502780751148"
+        iyy="0.0125493047119251"
+        iyz="0.000171227036330293"
+        izz="0.0124511366596275" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/finger1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-0.481 .056 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/finger1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_finger1"
+    type="revolute">
+    <origin
+      xyz="0.12173 0 0.025447"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="finger1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="finger2">
+    <inertial>
+      <origin
+        xyz="-0.370997344849409 0.105281485051142 -0.0425649356498366"
+        rpy="0 0 0" />
+      <mass
+        value="0.433898677133809" />
+      <inertia
+        ixx="0.0016639828460917"
+        ixy="0.00120863202140725"
+        ixz="-0.00204502780751148"
+        iyy="0.0125493047119251"
+        iyz="0.000171227036330293"
+        izz="0.0124511366596275" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/finger2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://msv_3dof_arm/meshes/finger2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_finger2"
+    type="revolute">
+    <origin
+      xyz="0.12173 0 0.11455"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="finger2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

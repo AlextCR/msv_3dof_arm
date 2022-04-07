@@ -1,0 +1,8 @@
+<launch>
+
+<!-- Launch Gazebo -->
+<include file="$(find msv_3dof_arm)/launch/controllers_load.launch" /> 
+
+ <!-- echo node -->
+ <node pkg="msv_3dof_arm" type="echo_node" name="echo_gazebo_node"/> 
+</launch>

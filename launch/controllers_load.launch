@@ -1,0 +1,14 @@
+<launch>
+<!-- Launch Gazebo -->
+<include file="$(find msv_3dof_arm)/launch/gazebo_final.launch" />
+<!-- Load joint controller configurations from YAML file to parameter
+server -->
+<rosparam file="$(find msv_3dof_arm)/config/robot_final_gazebo_control.yaml" command="load"/>
+<!-- load the controllers -->
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+output="screen" ns="/msv_3dof_arm" args="joint_state_controller joint_base_position_controller joint_shoulder_position_controller joint_elbow_position_controller joint_finger1_position_controller joint_finger2_position_controller"/>
+<!-- convert joint states to TF transforms for rviz, etc -->
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+<remap from="/joint_states" to="/three_dof_arm/joint_states" />
+</node>
+</launch>
